@@ -2,7 +2,7 @@
 
 Name:		fspc
 Version:	1.0.1
-Release:	%mkrel 0.%{snapshot}
+Release:	%mkrel 0.%{snapshot}.1
 Summary:	Utility to configure sentelic touchpad devices
 License:	BSD
 Group:		System/Configuration/Hardware
@@ -11,8 +11,7 @@ URL:		http://fsp-lnxdrv.sourceforge.net
 Source:		fspc-1.0.1-r36.tar.lzma
 Patch:		fspc-format-security.patch
 BuildRequires:	cmake
-BuildRequires:	libwxgtk-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRequires:	wxgtku-devel
 
 %description
 fspc is an utility to configure features of sentelic touchpad devices.
@@ -31,12 +30,12 @@ cmake .
 popd
 
 %install
-rm -rf %{buildroot}
-mkdir -p %{buildroot}{%{_bindir},%{_datadir}/fspc}
+%__rm -rf %{buildroot}
+%__mkdir_p %{buildroot}{%{_bindir},%{_datadir}/fspc}
 pushd src/fspc
-cp fspcui{,_zh_CN,_zh_TW}.xrc %{buildroot}%{_datadir}/fspc
-cp -R pic %{buildroot}%{_datadir}/fspc
-cp fspc %{buildroot}%{_bindir}
+%__cp fspcui{,_zh_CN,_zh_TW}.xrc %{buildroot}%{_datadir}/fspc
+%__cp -R pic %{buildroot}%{_datadir}/fspc
+%__cp fspc %{buildroot}%{_bindir}
 popd
 
 %files
