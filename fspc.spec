@@ -10,6 +10,7 @@ URL:		http://fsp-lnxdrv.sourceforge.net
 # checkout from https://fsp-lnxdrv.svn.sourceforge.net/svnroot/fsp-lnxdrv
 Source:		fspc-1.0.1-r36.tar.lzma
 Patch:		fspc-format-security.patch
+Patch1:		fspc-1.0.1-r36-DSO.patch
 BuildRequires:	cmake
 BuildRequires:	wxgtku-devel
 
@@ -19,6 +20,7 @@ fspc is an utility to configure features of sentelic touchpad devices.
 %prep
 %setup -q -n %{name}-%{version}-%{snapshot}
 %patch -p1 -b .format-security
+%patch1 -p1 -b .dso~
 
 %build
 pushd src/libfsp
