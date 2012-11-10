@@ -1,0 +1,23 @@
+Fix build with -Wformat -Werror=format-security
+
+diff -p -up fspc-1.0.1-r36/src/fspc/fspcCli.cpp.orig fspc-1.0.1-r36/src/fspc/fspcCli.cpp
+--- fspc-1.0.1-r36/src/fspc/fspcCli.cpp.orig	2009-08-06 11:47:54.000000000 -0300
++++ fspc-1.0.1-r36/src/fspc/fspcCli.cpp	2009-08-06 13:15:27.000000000 -0300
+@@ -388,7 +388,7 @@ void FspcCli::VerboseOutput(wxString str
+     {
+         return;   
+     }
+-    wxPrintf(str);
++    wxPrintf(wxT("%s"), str.c_str());
+ }
+ 
+ /**
+@@ -402,7 +402,7 @@ void FspcCli::DebugOutput(wxString str)
+     {
+         return;   
+     }
+-    wxPrintf(str);
++    wxPrintf(wxT("%s"), str.c_str());
+ }
+ 
+ /**

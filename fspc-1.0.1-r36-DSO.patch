@@ -1,0 +1,14 @@
+diff -urN fspc-1.0.1-r36/src/fspc/CMakeLists.txt fspc-1.0.1-r36-patched/src/fspc/CMakeLists.txt
+--- fspc-1.0.1-r36/src/fspc/CMakeLists.txt	2009-08-06 01:50:11.000000000 +1100
++++ fspc-1.0.1-r36-patched/src/fspc/CMakeLists.txt	2012-01-19 23:43:34.015716810 +1100
+@@ -47,8 +47,8 @@
+ ADD_EXECUTABLE (fspcCliTest ${FSPC_SRCS_CLI_TEST})
+ 
+ # Specify link options and libraries.
+-TARGET_LINK_LIBRARIES(fspc ${wxWidgets_LIBRARIES} fsp)
+-TARGET_LINK_LIBRARIES(fspcCliTest ${wxWidgets_LIBRARIES} fsp)
++TARGET_LINK_LIBRARIES(fspc ${wxWidgets_LIBRARIES} fsp X11)
++TARGET_LINK_LIBRARIES(fspcCliTest ${wxWidgets_LIBRARIES} fsp X11)
+ 
+ 
+ 
