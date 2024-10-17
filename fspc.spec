@@ -6,7 +6,7 @@ Release:	%mkrel 0.%{snapshot}.1
 Summary:	Utility to configure sentelic touchpad devices
 License:	BSD
 Group:		System/Configuration/Hardware
-URL:		http://fsp-lnxdrv.sourceforge.net
+URL:		https://fsp-lnxdrv.sourceforge.net
 # checkout from https://fsp-lnxdrv.svn.sourceforge.net/svnroot/fsp-lnxdrv
 Source:		fspc-1.0.1-r36.tar.lzma
 Patch:		fspc-format-security.patch
