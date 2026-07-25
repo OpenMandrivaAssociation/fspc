@@ -2,7 +2,7 @@
 
 Name:		fspc
 Version:	1.0.1
-Release:	%mkrel 0.%{snapshot}.1
+Release:	0.%{snapshot}.2
 Summary:	Utility to configure sentelic touchpad devices
 License:	BSD
 Group:		System/Configuration/Hardware
